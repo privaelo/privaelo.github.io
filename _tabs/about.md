@@ -21,5 +21,5 @@ Multi-robot task allocation under capability uncertainty. Belief-space allocatio
 
 GitHub: [@privaelo](https://github.com/privaelo)  
 LinkedIn: [Tagnon Okoumassoun](https://www.linkedin.com/in/tagnon-45616017b/)  
-[Email](tagnonprivael@gmail.com)
+Email: [tagnonprivael@gmail.com](mailto:tagnonprivael@gmail.com)
 
