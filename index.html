@@ -1,4 +1,327 @@
----
-layout: home
-# Index page
----
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Tagnon Okoumassoun
+        </title>
+
+        <meta name="description" content="Tagnon Okoumassoun — MS in Robotics and Autonomous Systems. Multi-robot coordination, joint prediction and planning, and multi-agent reinforcement learning.">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header id="top">
+            <div class="row">
+                <nav>
+                    <a href="#research">Research</a>
+                    <a href="#work">Projects</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+
+            <div class="row header-text-container">
+                <div class="header-text">
+                    <h1>Tagnon Okoumassoun</h1>
+                    <p>Robotics enthusiast, seeking MS/PhD opportunities in Robotics and Autonomous Systems, with focus on multi-robot systems coordination, joint prediction and planning, and multi-agent reinforcement learning.</p>
+                    <a href="#contact" class="btn">Get in touch</a>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Research -->
+        <section id="research">
+            <div class="row">
+                <h2>Research</h2>
+
+                <div class="work-box">
+                    <div class="work-box-image work-box-image-stack">
+                        <img src="images/fig_b_distributions.png" alt="Risk-aware sensor placement — fig B, distributions">
+                        <img src="images/fig_c_downside.png" alt="Risk-aware sensor placement — fig C, downside">
+                    </div>
+
+                    <div class="work-box-text">
+                        <h3>Risk-Aware Sensor Placement</h3>
+
+                        <p>Independent research building on Kim et al. (IEEE SysCon 2025). Demonstrated that void probability is convex in sensor capability for multi-sensor placement, derived the Jensen gap to first order in capability variance, and verified the prediction in simulation. Formulated a risk-aware planner with a mean–standard-deviation objective; in simulation it holds 5th-percentile void probability flat under growing capability uncertainty while the nominal planner degrades.</p>
+
+                        <ul>
+                            <li>Python</li>
+                            <li>NumPy / SciPy</li>
+                            <li>Matplotlib</li>
+                            <li>Convex analysis</li>
+                            <li>Risk-aware planning</li>
+                        </ul>
+
+                        <div class="work-box-links">
+                            <a href="https://github.com/privaelo/risk-aware-sensor-placement" class="btn-text">
+                                GitHub &nbsp;&rarr;
+                            </a>
+
+                            <a href="https://github.com/privaelo/risk-aware-sensor-placement" class="gh-link" aria-label="GitHub repo">
+                                <img src="images/github.svg" alt="GitHub">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Projects -->
+        <section id="work">
+            <div class="row">
+                <h2>Projects</h2>
+
+                <div class="work-box">
+                    <div class="work-box-text">
+                        <h3>pursuer-evader — Multi-Agent Reinforcement Learning</h3>
+
+                        <p>Cooperative pursuit–evasion with three pursuers and one evader. Decentralized pursuer policies trained with IPPO in JaxMARL, evaluated against an evader drawn from three parameterized policy classes to test generalization.</p>
+
+                        <ul>
+                            <li>Python</li>
+                            <li>Jax</li>
+                            <li>JaxMARL</li>
+                            <li>IPPO</li>
+                            <li>Multi-agent RL</li>
+                        </ul>
+
+                        <div class="work-box-links">
+                            <a href="https://github.com/privaelo/pursuer-evader" class="btn-text">
+                                GitHub &nbsp;&rarr;
+                            </a>
+
+                            <a href="https://github.com/privaelo/pursuer-evader" class="gh-link" aria-label="GitHub repo">
+                                <img src="images/github.svg" alt="GitHub">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="work-box-image">
+                        <img src="images/pursuer-evader.jpg" alt="Multi-agent pursuit-evasion">
+                    </div>
+                </div>
+
+                <div class="work-box">
+                    <div class="work-box-image">
+                        <img src="images/ar4.png" alt="Color sorting robotic arm">
+                    </div>
+
+                    <div class="work-box-text">
+                        <h3>ar4-color-sorting-arm — 6-DOF Manipulator</h3>
+
+                        <p>Collaborative project on a 6-DOF color-sorting arm: CAD-designed manipulator, Gazebo simulation, MoveIt 2 motion planning, and RGB-D color detection. My contribution: designed the gripper base in CAD, built the URDF assembly and integrated it into Gazebo, and designed the final simulation world with boxes and bins.</p>
+
+                        <ul>
+                            <li>ROS 2</li>
+                            <li>Gazebo Sim</li>
+                            <li>MoveIt 2</li>
+                            <li>URDF / Xacro</li>
+                            <li>CAD</li>
+                            <li>RGB-D vision</li>
+                        </ul>
+
+                        <div class="work-box-links">
+                            <a href="https://github.com/privaelo/ar4-color-sorting-arm" class="btn-text">
+                                GitHub &nbsp;&rarr;
+                            </a>
+
+                            <a href="https://github.com/privaelo/ar4-color-sorting-arm" class="gh-link" aria-label="GitHub repo">
+                                <img src="images/github.svg" alt="GitHub">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-box">
+                    <div class="work-box-text">
+                        <h3>adibot — Autonomous Object Following</h3>
+
+                        <p>Differential-drive robot that follows a moving object through a cluttered world. The stack combines constant-velocity target prediction, A* global planning on an occupancy grid, pure-pursuit tracking, and fixed-rate replanning to keep the target in view under dynamic conditions.</p>
+
+                        <ul>
+                            <li>Python</li>
+                            <li>ROS 2</li>
+                            <li>A* planning</li>
+                            <li>Pure-pursuit control</li>
+                            <li>Occupancy grids</li>
+                        </ul>
+
+                        <div class="work-box-links">
+                            <a href="https://github.com/privaelo/adibot" class="btn-text">
+                                GitHub &nbsp;&rarr;
+                            </a>
+
+                            <a href="https://github.com/privaelo/adibot" class="gh-link" aria-label="GitHub repo">
+                                <img src="images/github.svg" alt="GitHub">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="work-box-image">
+                        <img src="images/adibot.gif" alt="Differential-drive mobile robot">
+                    </div>
+                </div>
+
+                <div class="work-box">
+                    <div class="work-box-image">
+                        <img src="images/air-ground-ops.gif" alt="Multi-robot task allocation">
+                    </div>
+
+                    <div class="work-box-text">
+                        <h3>air-ground-ops — Multi-Robot Task Allocation</h3>
+
+                        <p>Heterogeneous air–ground testbed built in ROS 2 and Gazebo. A UAV provides overhead sensing and publishes a coarse occupancy estimate; three UGVs execute the assigned navigation tasks. I implemented the Hungarian algorithm as a centralized, optimization-based allocation baseline across multiple target locations.</p>
+
+                        <ul>
+                            <li>ROS 2</li>
+                            <li>Gazebo Sim</li>
+                            <li>Python</li>
+                            <li>Hungarian algorithm</li>
+                            <li>Task allocation</li>
+                        </ul>
+
+                        <div class="work-box-links">
+                            <a href="https://github.com/privaelo/air-ground-ops" class="btn-text">
+                                GitHub &nbsp;&rarr;
+                            </a>
+
+                            <a href="https://github.com/privaelo/air-ground-ops" class="gh-link" aria-label="GitHub repo">
+                                <img src="images/github.svg" alt="GitHub">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Publications -->
+        <section id="publications">
+            <div class="row">
+                <h2>Publications</h2>
+
+                <ol class="pub-list">
+                    <li>
+                        <p class="pub-title">Blockchain-Enabled SAGIN Communication for Disaster Prediction and Management</p>
+                        <p class="pub-meta">T. P. Okoumassoun, I. Al Ridhawi, et al. — IEEE Cyber Science Congress (CyberSci), 2023. <span class="pub-badge">Best Conference Paper Award</span></p>
+                        <a href="https://doi.org/10.1109/DASC/PiCom/CBDCom/Cy59711.2023.10361502" class="btn-text" target="_blank">Link</a>
+                    </li>
+
+                    <li>
+                        <p class="pub-title">Performance Evaluation of Optical Amplifiers in a Hybrid RoF-WDM Communication System</p>
+                        <p class="pub-meta">T. P. Okoumassoun, A. Antwiwaa, et al. — Journal of Communications, vol. 18, no. 8, 2023.</p>
+                        <a href="https://www.jocm.us/2023/JCM-V18N8-522.pdf" class="btn-text" target="_blank">Link</a>
+                    </li>
+
+                    <li>
+                        <p class="pub-title">Free Space Optics Link Performance Estimation Under Diverse Conditions</p>
+                        <p class="pub-meta">T. P. Okoumassoun, A. Antwiwaa, et al. — Journal of Communications, 2022.</p>
+                        <a href="https://www.jocm.us/show-276-1814-1.html" class="btn-text" target="_blank">Link</a>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+
+
+        <!-- About Me -->
+        <section id="about">
+            <div class="row">
+                <h2>About Me</h2>
+
+                <div class="about">
+                    <div class="about-image">
+                        <img src="images/profile.jpg" alt="Tagnon Okoumassoun">
+                    </div>
+
+                    <div class="about-text">
+                        <p>I hold a Master of Engineering in Electrical and Computer Engineering from the University of Ottawa, where I worked with Dr. Ismaeel Al Ridhawi on federated learning and distributed systems for UAV swarms. Before Ottawa, I earned my Bachelor of Engineering in Electronics and Communications at All Nations University College in Ghana, graduating with First Class Honors.</p>
+
+                        <p>Since 2023 I have been a Software Test Engineer at Honda R&amp;D Americas in Raymond, OH, building and executing automated tests for embedded infotainment software over CAN, Ethernet, ADB, and OTA. I am a Professional Member of Black in Robotics and a Graduate Mentee with Emerging Leaders in AI (2026–2027).</p>
+
+                        <div class="skills">
+                            <div class="skills-row">
+                                <span class="skills-label">Programming</span>
+                                <span class="skills-values">Python · C++ · MATLAB</span>
+                            </div>
+                            <div class="skills-row">
+                                <span class="skills-label">Robotics &amp; Sim</span>
+                                <span class="skills-values">ROS 2 · Gazebo Sim · MuJoCo · URDF/Xacro · RViz</span>
+                            </div>
+                            <div class="skills-row">
+                                <span class="skills-label">AI &amp; Vision</span>
+                                <span class="skills-values">PyTorch · OpenCV · Jax · CUDA</span>
+                            </div>
+                            <div class="skills-row">
+                                <span class="skills-label">Tools</span>
+                                <span class="skills-values">Linux · Shell · Git · Docker</span>
+                            </div>
+                        </div>
+
+                        <a href="assets/Tagnon_Okoumassoun_Resume.pdf" class="btn">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="row">
+                <div class="contact">
+                    <h2>Get In Touch</h2>
+
+                    <p>If you would like to reach out about research, collaborations, or opportunities, send me an email and I will respond as soon as I can.</p>
+
+                    <a href="mailto:tagnonprivael@gmail.com" class="btn">
+                        tagnonprivael@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="footer-social">
+                    <a href="https://github.com/privaelo" aria-label="GitHub">
+                        <img src="images/github.svg" alt="GitHub">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/tagnon-45616017b" aria-label="LinkedIn">
+                        <img src="images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- Back To Top Button -->
+        <a aria-label="Back To Top" class="back-to-top" href="#top">
+            <img src="images/arrow_up.svg" alt="Arrow Up">
+        </a>
+    </body>
+</html>
