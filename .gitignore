@@ -5,6 +5,9 @@
 .idea/
 .vscode/
 
-# Node (if you add tooling later)
+# Node
 node_modules/
-package-lock.json
+dist/
+*.tsbuildinfo
+
+reference_files/
