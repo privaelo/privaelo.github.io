@@ -17,7 +17,6 @@ const publications: WorkEntry[] = [
       "SAGIN",
       "Federated Learning",
       "UAV Swarms",
-      "Earthquake Prediction",
     ],
     overview:
       "Published at the IEEE Cyber Science Congress (CyberSci) 2023, where it won Best Conference Paper. This paper introduces a blockchain-enabled Space-Air-Ground Integrated Network (SAGIN) framework. It integrates satellites, aerial networks, and terrestrial communication, and authenticates both the devices and the data flowing through a 6G-era cooperative network. The framework supports Federated Learning (FL) for distributed, real-time data analysis. It's demonstrated on an earthquake monitoring use case that also explores whether certain sensor signals show anomalous behavior around past earthquake events.",
@@ -28,7 +27,7 @@ const publications: WorkEntry[] = [
     results:
       "The fuzzy model found that some of the selected sensor channels showed anomalous patterns clustered within a similar time window around several historical earthquake events. That's a correlational signal worth investigating further. It is not proof that earthquakes can be reliably predicted from it, and I want to be explicit about that distinction given the word 'prediction' in the paper's title. The broader framework combines that analysis with blockchain-authenticated, FL-supported SAGIN communication and UAV-based post-event monitoring. Together, it demonstrated the feasibility of the overall architecture, and the paper received the Best Conference Paper Award at IEEE CyberSci 2023.",
     learnings:
-      "This project taught me that security and distributed learning have to be co-designed rather than bolted on separately. Authenticating devices and data only matters if the analysis built on top of it, Federated Learning here, is also structured to work with distributed, potentially unreliable participants. It also sharpened how carefully I try to state what a result actually shows. Finding anomalous sensor patterns near past earthquake events is a hypothesis worth pursuing, not a validated predictive capability. I've carried that discipline about not overstating 'prediction' into how I evaluate models in my later work.",
+      "This project taught me that security and distributed learning have to be co-designed together. Authenticating devices and data only matters if the analysis built on top of it, Federated Learning here, is also structured to work with distributed, potentially unreliable participants. It also sharpened how carefully I try to state what a result actually shows.",
     role: "Author",
     paperUrl:
       "https://doi.org/10.1109/DASC/PiCom/CBDCom/Cy59711.2023.10361502",
@@ -54,7 +53,7 @@ const publications: WorkEntry[] = [
     results:
       "EDFA delivered the best received power at every destination length tested, peaking at 19.2128 dB at 10 km. SOA had the best Q-factor and BER at shorter distances: a BER of 1.21666 × 10⁻⁷ and Q-factor of 5.15645 at 10 km, and a BER of 5.62603 × 10⁻⁸ and Q-factor of 5.2966 at 25 km. At the longest distance tested, 60 km, the Raman amplifier performed best, with a Q-factor of 4.6517 and BER of 1.27797 × 10⁻⁶. Overall, EDFA and Raman amplifiers proved most suitable for long-distance RoF-WDM transmission.",
     learnings:
-      "This project gave me a rigorous, metrics-driven way of thinking about system trade-offs. The 'best' component isn't fixed. It depends on the operating regime: SOA won at short range, while EDFA and Raman took over at longer distances. That habit, benchmarking across the full range of operating conditions rather than a single setpoint, is something I still apply directly when evaluating robotics systems under uncertainty.",
+      "This project gave me a rigorous, metrics-driven way of thinking about system trade-offs. The 'best' component isn't fixed. It depends on the operating regime: SOA won at short range, while EDFA and Raman took over at longer distances. That habit, benchmarking across the full range of operating conditions, is something I still apply directly when evaluating robotics systems under uncertainty.",
     role: "Author",
     paperUrl: "https://www.jocm.us/2023/JCM-V18N8-522.pdf",
   },
@@ -78,7 +77,7 @@ const publications: WorkEntry[] = [
     results:
       "The simulation results showed that the proposed diversity techniques achieved a better Bit Error Rate (BER) and Signal-to-Noise Ratio (SNR) than the comparison techniques. This indicates that diversity is an effective way to mitigate the impact of tropical atmospheric conditions on FSO link performance.",
     learnings:
-      "This project was my introduction to treating a communication system's operating environment as a first-class design constraint, not an afterthought. Tropical atmospheric conditions weren't just noise to average out. They were the entire reason the diversity technique was needed. That framing, designing explicitly for the conditions a system will actually face rather than idealized ones, is a thread that runs through my later research, including the risk-aware sensor placement work.",
+      "This project was my introduction to treating a communication system's operating environment as a first-class design constraint. Tropical atmospheric conditions weren't just noise to average out. They were the entire reason the diversity technique was needed. That framing, designing explicitly for the conditions a system will actually face, is a thread that runs through my later research, including the risk-aware sensor placement work.",
     role: "Author",
     paperUrl:
       "https://www.jocm.us/uploadfile/2022/0826/20220826044558392.pdf",

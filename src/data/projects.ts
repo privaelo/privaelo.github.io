@@ -8,7 +8,7 @@ const projects: WorkEntry[] = [
     slug: "risk-aware-sensor-placement",
     title: "Risk-Aware Sensor Placement",
     description:
-      "Independent research building on Kim et al. (IEEE SysCon 2025) showing void probability is convex in sensor capability, and using that to design a risk-aware multi-sensor placement planner.",
+      "Independent research showing void probability is convex in sensor capability, and using that to design a risk-aware multi-sensor placement planner.",
     tags: [
       "Research",
       "Python",
@@ -17,7 +17,7 @@ const projects: WorkEntry[] = [
       "Convex Analysis",
       "Risk-Aware Planning",
     ],
-    coverImage: "projects/risk-aware-sensor-placement/fig_c_downside.png",
+    coverImage: "projects/risk-aware-sensor-placement/fig_a_placements.png",
     overview:
       "Independent research project extending Kim et al.'s (IEEE SysCon 2025) work on multi-sensor placement under uncertainty. Sensor networks are typically planned assuming each sensor's detection capability is known exactly. In practice, capability varies with manufacturing tolerances, environmental conditions, and degradation over time. This project asks how much that uncertainty actually costs, and whether a planner that accounts for it can do meaningfully better.",
     challenge:
@@ -25,9 +25,9 @@ const projects: WorkEntry[] = [
     solution:
       "I proved that void probability is convex in sensor capability for multi-sensor placement. I derived a first-order approximation to the Jensen gap in terms of capability variance, giving a closed-form estimate of coverage loss without needing full Monte Carlo simulation. I verified this prediction against simulation, then used it to motivate a risk-aware placement planner with a mean–standard-deviation objective, rather than the standard mean-only objective, so the planner explicitly trades off expected coverage against its variability.",
     results:
-      "In simulation, the risk-aware planner holds the 5th-percentile void probability roughly flat as capability uncertainty grows. The nominal (mean-only) planner's worst-case coverage steadily degrades instead. This confirms that accounting for the Jensen gap during planning, not just after the fact, produces placements that are meaningfully more robust to real-world sensor variability.",
+      "In simulation, the risk-aware planner holds the 5th-percentile void probability roughly flat as capability uncertainty grows. The nominal (mean-only) planner's worst-case coverage steadily degrades instead. This confirms that accounting for the Jensen gap during planning produces placements that are meaningfully more robust to real-world sensor variability.",
     learnings:
-      "This project sharpened my sense of when a convexity argument is worth chasing analytically versus just simulating. Having the closed-form Jensen gap made it possible to reason about the risk-aware objective directly, instead of tuning it by trial and error. It also reinforced how much of 'robust' planning is really about choosing the right objective function. The risk-aware planner uses the same coverage model as the nominal one; the entire improvement comes from optimizing a different statistic of the same distribution.",
+      "This project sharpened my sense of when a convexity argument is worth chasing analytically versus just simulating. Having the closed-form Jensen gap made it possible to reason about the risk-aware objective directly. It also reinforced how much of 'robust' planning is really about choosing the right objective function. The risk-aware planner uses the same coverage model as the nominal one; the entire improvement comes from optimizing a different statistic of the same distribution.",
     media: [
       {
         type: "image",
@@ -39,6 +39,12 @@ const projects: WorkEntry[] = [
         url: "projects/risk-aware-sensor-placement/fig_c_downside.png",
         caption:
           "5th-percentile ('downside') void probability: risk-aware vs. nominal planner",
+      },
+      {
+        type: "image",
+        url: "projects/risk-aware-sensor-placement/fig_d_jensen.png",
+        caption:
+          "Realized Jensen gap vs. capability variance, matching the first-order closed-form prediction",
       },
     ],
     techStack: ["Python", "NumPy", "SciPy", "Matplotlib"],
@@ -101,13 +107,13 @@ const projects: WorkEntry[] = [
     overview:
       "air-ground-ops is a heterogeneous air-ground robotics testbed built in ROS 2 and Gazebo. It combines a UAV with overhead sensing and three ground vehicles (UGVs) that execute navigation tasks. The project explores multi-robot task allocation: given several target locations and multiple ground vehicles, which robot should go where?",
     challenge:
-      "Coordinating heterogeneous robots means dealing with two problems at once. The first is building a shared picture of the environment from a single overhead sensor. The second is dividing a set of target locations among multiple ground vehicles efficiently, rather than just first-come-first-served. This needed a principled way to compute that assignment, plus the ROS 2/Gazebo infrastructure to pipe UAV sensing into a decision the UGVs could act on.",
+      "Coordinating heterogeneous robots means dealing with two problems at once. The first is building a shared picture of the environment from a single overhead sensor. The second is dividing a set of target locations among multiple ground vehicles efficiently. This needed a principled way to compute that assignment, plus the ROS 2/Gazebo infrastructure to pipe UAV sensing into a decision the UGVs could act on.",
     solution:
       "The UAV publishes a coarse occupancy estimate of the environment from its overhead vantage point, shared across the testbed. For task allocation, I implemented the Hungarian algorithm as a centralized, optimization-based baseline. Given the set of UGVs and target locations, it computes the assignment that minimizes total travel cost. The UGVs then execute that assignment using their local navigation stacks.",
     results:
       "The testbed successfully coordinates one UAV and three UGVs end-to-end in simulation. The UAV's occupancy estimate informs the shared map, and the Hungarian-algorithm allocator assigns each UGV to a target location to minimize total travel cost across the fleet. That outperformed a naive nearest-target assignment in the scenarios tested.",
     learnings:
-      "This project was my first hands-on experience with centralized multi-robot task allocation as an optimization problem rather than a heuristic. Implementing the Hungarian algorithm as a baseline gave me a concrete reference point for evaluating more decentralized or learned allocation strategies later. Building the ROS 2/Gazebo air-ground pipeline also taught me a lot about the practical overhead of getting heterogeneous robots to share a consistent world model.",
+      "This project was my first hands-on experience with centralized multi-robot task allocation as an optimization problem. Implementing the Hungarian algorithm as a baseline gave me a concrete reference point for evaluating more decentralized or learned allocation strategies later. Building the ROS 2/Gazebo air-ground pipeline also taught me a lot about the practical overhead of getting heterogeneous robots to share a consistent world model.",
     media: [
       {
         type: "image",
@@ -118,6 +124,7 @@ const projects: WorkEntry[] = [
     techStack: ["ROS 2", "Gazebo Sim", "Python", "Hungarian Algorithm"],
     githubUrl: "https://github.com/privaelo/air-ground-ops",
   },
+  /* Commented out until there are quantifiable results to show.
   {
     slug: "ar4-color-sorting-arm",
     title: "ar4-color-sorting-arm — 6-DOF Manipulator",
@@ -161,6 +168,7 @@ const projects: WorkEntry[] = [
     role: "Mechanical CAD & Simulation Integration",
     githubUrl: "https://github.com/privaelo/ar4-color-sorting-arm",
   },
+  */
   {
     slug: "engine-sensor-anomaly-detection",
     title: "Engine Sensor Anomaly Detection",
@@ -172,21 +180,19 @@ const projects: WorkEntry[] = [
       "Isolation Forest",
       "Airflow",
       "Predictive Maintenance",
-      "Honda i-Con Hackathon",
-      "2nd Place",
     ],
     coverImage:
       "https://github.com/user-attachments/assets/377f742b-7f70-488a-8eb1-d47eb5bd369a",
     overview:
       "Engine Sensor Anomaly Detection is an end-to-end machine learning pipeline for spotting anomalies in multivariate vehicle sensor data. It combines Isolation Forest, an unsupervised anomaly-detection model, with Airflow orchestration to make the workflow repeatable. It's built on the NASA CMAPSS turbofan engine dataset, a standard benchmark for predictive maintenance. This project inspired EngineSense, which won second place at Honda's i-Con Hackathon (2026).",
     challenge:
-      "Vehicle sensor data is multivariate and noisy, and failures don't announce themselves as a single bad reading. Detecting a developing problem means looking at how many sensor channels move together over time, not just individual thresholds. There's also no labeled 'failure' data to train a classifier on ahead of time. The detection method had to work in an unsupervised setting, and the whole pipeline needed to be repeatable rather than a one-off notebook analysis.",
+      "Vehicle sensor data is multivariate and noisy, and failures don't announce themselves as a single bad reading. Detecting a developing problem means looking at how many sensor channels move together over time. There's also no labeled 'failure' data to train a classifier on ahead of time. The detection method had to work in an unsupervised setting, and the whole pipeline needed to be repeatable.",
     solution:
-      "I generated sliding-window features from the sensor and operational-setting columns, using a 30-cycle window with a stride of 1, so each sample captures a short history of engine behavior rather than a single snapshot. An Isolation Forest model scores each window for how anomalous it is. Windows scoring above the 98th percentile are flagged as anomalies. The whole scoring pipeline runs as an Airflow DAG, with separate tasks for loading data, generating windows, and scoring and saving anomalies, so it can be scheduled and re-run repeatably instead of executed by hand.",
+      "I generated sliding-window features from the sensor and operational-setting columns, using a 30-cycle window with a stride of 1, so each sample captures a short history of engine behavior. An Isolation Forest model scores each window for how anomalous it is. Windows scoring above the 98th percentile are flagged as anomalies. The whole scoring pipeline runs as an Airflow DAG, with separate tasks for loading data, generating windows, and scoring and saving anomalies, so it can be scheduled and re-run repeatably.",
     results:
       "The pipeline flags anomaly alerts per engine unit and cycle, with dashboards showing the anomaly score distribution, anomaly counts per engine, and sensor correlation patterns. The approach and results became the basis for EngineSense, a project inspired by this pipeline that won second place at Honda's i-Con Hackathon in 2026.",
     learnings:
-      "This project was my first time building a full ML workflow around orchestration rather than just a model. Wiring the feature generation, scoring, and output steps into an Airflow DAG forced me to think about the pipeline as a repeatable system, not just a script. Working with an unsupervised method also sharpened how I think about evaluation. Without labeled failures, a percentile-based threshold is a starting point, not a validated decision boundary, and that's a distinction worth being explicit about.",
+      "This project was my first time building a full ML workflow around orchestration. Wiring the feature generation, scoring, and output steps into an Airflow DAG forced me to think about the pipeline as a repeatable system. Working with an unsupervised method also sharpened how I think about evaluation.",
     media: [
       {
         type: "image",
@@ -215,6 +221,32 @@ const projects: WorkEntry[] = [
     ],
     role: "Solo Developer",
     githubUrl: "https://github.com/privaelo/engine-sensor-anomaly-detection",
+  },
+  {
+    slug: "multichannel-audio-source-extraction",
+    title: "Multichannel Audio Source Extraction",
+    description:
+      "Course mini-project (ELG5377 - Adaptive Signal Processing, uOttawa, 2022): separating two overlapping speech sources from a two-microphone mixture using optimum Wiener filters built from empirical correlations.",
+    tags: [
+      "Coursework",
+      "ELG5377",
+      "MATLAB",
+      "Wiener Filtering",
+      "Blind Source Separation",
+    ],
+    coverImage:
+      "projects/multichannel-audio-source-extraction/output-graphs.jpg",
+    overview:
+      "A mini-project for uOttawa's ELG5377 (Adaptive Signal Processing) course in 2022. Two speech sources, SA and SB, were recorded on two microphones, with an interval where they overlap and speak simultaneously. The goal was to recover each source separately from the two-microphone mixture using linear filtering built entirely from second-order statistics (correlations), rather than any learned or adaptive model.",
+    challenge:
+      "The two sources overlap in time on both microphones, so there's no interval where the mixture itself isolates either one. What's available instead are short training intervals where each source was recorded alone. The task was to turn those single-source recordings into a filter that, when applied to the overlapping two-microphone mixture, would pull each source back out.",
+    solution:
+      "For each source, I estimated a cross-correlation vector between its isolated training recording and both microphones' overlapping-interval signals, and built a joint 2-microphone autocorrelation (block Toeplitz) matrix from the overlapping mixture itself. Solving the resulting Wiener-Hopf normal equations, via a regularized pseudo-inverse since the correlation matrix was close to singular, gives an 11-tap FIR filter per microphone per source. Applying each source's pair of filters to the two mic signals and summing the outputs produces that source's extracted estimate. I also computed a signal-to-interference ratio (SIR) between the two extracted signals to quantify how well each favored its target source over the other.",
+    results:
+      "The extracted signals visibly track each source's speech envelope separately in the output plots, even though both sources overlap in every sample of the input mixture. The SIR metric in the code gives a way to quantify that separation numerically, on top of the qualitative before/after comparison in the plots.",
+    learnings:
+      "This project was a hands-on run through the Wiener-Hopf equations: estimating correlations from data, assembling them into a linear system, and dealing with a poorly conditioned correlation matrix that needed a regularized pseudo-inverse rather than a direct inverse. It's a smaller, classical counterpart to the estimation and filtering ideas that show up in my later robotics and sensing work.",
+    techStack: ["MATLAB", "Wiener Filtering", "Correlation Estimation"],
   },
 ];
 
