@@ -23,12 +23,8 @@ export default function Hero() {
               deleteSpeed: "natural",
               strings: [
                 "Robotics & Autonomous Systems",
-                "Multi-Robot Coordination",
-                "Joint Prediction & Planning",
-                "Multi-Agent Reinforcement Learning",
                 "Software Test Engineer @ Honda R&D",
-                "MEng, University of Ottawa",
-                "Black in Robotics — Professional Member",
+                "MEng alumni @ uOttawa",
               ],
               autoStart: true,
               loop: true,

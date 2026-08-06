@@ -40,7 +40,7 @@ export default function Infograph() {
 function AboutMe() {
   return (
     <p>
-      I hold a Master of Engineering in Electrical and Computer Engineering
+      I hold a Master's in Electrical and Computer Engineering
       from the{" "}
       <a
         className="font-medium text-slate-200 hover:text-red-500 focus-visible:text-red-500"
@@ -50,13 +50,19 @@ function AboutMe() {
       >
         University of Ottawa
       </a>{" "}
-      and a Bachelor of Engineering in Electronics and Communications from All
-      Nations University College in Ghana, graduating with First Class
-      Honors. Broadly, I'm interested in multi-robot systems coordination,
+      and a Bachelor's in Electronics and Communications from{" "}
+      <a
+        className="font-medium text-slate-200 hover:text-red-500 focus-visible:text-red-500"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://anu.edu.gh/"
+      >
+        All Nations University
+      </a>{" "}
+      in Ghana, graduating with First Class Honors. Broadly, I'm interested in
+      multi-robot systems coordination,
       joint prediction and planning, and multi-agent reinforcement learning.
-      I currently work as a Software Test Engineer at Honda R&amp;D Americas,
-      and I'm a Professional Member of Black in Robotics and a Graduate
-      Mentee with Emerging Leaders in AI.
+      I currently work as a Software Test Engineer at Honda R&amp;D Americas.
     </p>
   );
 }
@@ -66,10 +72,13 @@ function Skills() {
     { label: "Programming", values: "Python · C++ · MATLAB" },
     {
       label: "Robotics & Sim",
-      values: "ROS 2 · Gazebo Sim · MuJoCo · URDF/Xacro · RViz",
+      values: "ROS 2 · Gazebo Sim · URDF/Xacro · RViz",
     },
-    { label: "AI & Vision", values: "PyTorch · OpenCV · Jax · CUDA" },
-    { label: "Tools", values: "Linux · Shell · Git · Docker" },
+    {
+      label: "AI & Data",
+      values: "PyTorch · OpenCV · Scikit-learn · NumPy · SciPy · Pandas · Matplotlib",
+    },
+    { label: "Tools", values: "Linux · Shell · Git · Docker · Airflow" },
   ];
 
   return (
@@ -109,8 +118,8 @@ function Experience() {
       />
       <ExperienceCard
         title="Undergraduate Researcher"
-        company="Space Systems Technology Lab (SSTL), All Nations University College"
-        dates="2021 – 2022"
+        company="Space Systems Technology Lab (SSTL), All Nations University"
+        dates="2019 – 2020"
         description="Optical communications research, including Free Space Optics and hybrid RoF-WDM links, advised by Dr. A. Antwiwaa."
         tags={["Optical Communications", "Free Space Optics", "RoF-WDM"]}
       />

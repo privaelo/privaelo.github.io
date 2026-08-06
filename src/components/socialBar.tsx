@@ -1,4 +1,5 @@
 import { TbBrandLinkedin, TbBrandGithub, TbMail } from "react-icons/tb";
+import { SiGooglescholar } from "react-icons/si";
 
 export default function SocialBar() {
   return (
@@ -26,6 +27,14 @@ export default function SocialBar() {
         className="basis-10"
       >
         <TbMail className="h-6 w-6 transition-colors hover:text-slate-200" />
+      </a>
+      <a
+        href="https://scholar.google.com/citations?user=J24uDc8AAAAJ&hl=en"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="basis-10"
+      >
+        <SiGooglescholar className="h-6 w-6 transition-colors hover:text-slate-200" />
       </a>
     </div>
   );
