@@ -74,13 +74,6 @@ const projects: WorkEntry[] = [
       "The resulting robot reliably follows a moving target through a cluttered test environment, re-routing around obstacles as they appear while keeping the target in view. The fixed-rate replanning strategy struck a good balance. The robot stays responsive to target motion changes without the path becoming unstable from over-frequent replanning.",
     learnings:
       "Building adibot made the coupling between prediction, planning, and control very concrete. A good global plan against a stale target prediction is still a bad plan. I came away with a much better intuition for how replanning frequency trades off responsiveness against computational cost and path stability. That's a theme I've carried into later multi-robot work.",
-    media: [
-      {
-        type: "image",
-        url: "projects/adibot/adibot.gif",
-        caption: "adibot tracking and following a moving target through a cluttered environment",
-      },
-    ],
     techStack: [
       "Python",
       "ROS 2",
@@ -114,13 +107,6 @@ const projects: WorkEntry[] = [
       "The testbed successfully coordinates one UAV and three UGVs end-to-end in simulation. The UAV's occupancy estimate informs the shared map, and the Hungarian-algorithm allocator assigns each UGV to a target location to minimize total travel cost across the fleet. That outperformed a naive nearest-target assignment in the scenarios tested.",
     learnings:
       "This project was my first hands-on experience with centralized multi-robot task allocation as an optimization problem. Implementing the Hungarian algorithm as a baseline gave me a concrete reference point for evaluating more decentralized or learned allocation strategies later. Building the ROS 2/Gazebo air-ground pipeline also taught me a lot about the practical overhead of getting heterogeneous robots to share a consistent world model.",
-    media: [
-      {
-        type: "image",
-        url: "projects/air-ground-ops/air-ground-ops.gif",
-        caption: "UAV overhead sensing coordinating three UGVs via centralized task allocation",
-      },
-    ],
     techStack: ["ROS 2", "Gazebo Sim", "Python", "Hungarian Algorithm"],
     githubUrl: "https://github.com/privaelo/air-ground-ops",
   },
