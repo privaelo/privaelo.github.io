@@ -6,7 +6,7 @@ import type { WorkEntry } from "./types";
 const projects: WorkEntry[] = [
   {
     slug: "risk-aware-sensor-placement",
-    title: "Risk-Aware Sensor Placement",
+    title: "Risk-Aware Sensor Placement (2026)",
     description:
       "Independent research showing void probability is convex in sensor capability, and using that to design a risk-aware multi-sensor placement planner.",
     tags: [
@@ -53,7 +53,7 @@ const projects: WorkEntry[] = [
   },
   {
     slug: "adibot",
-    title: "adibot — Autonomous Object Following",
+    title: "adibot — Autonomous Object Following (2026)",
     description:
       "Differential-drive robot that follows a moving object through a cluttered world, combining target prediction, A* planning, and pure-pursuit tracking.",
     tags: [
@@ -93,7 +93,7 @@ const projects: WorkEntry[] = [
   },
   {
     slug: "air-ground-ops",
-    title: "air-ground-ops — Multi-Robot Task Allocation",
+    title: "air-ground-ops — Multi-Robot Task Allocation (2025)",
     description:
       "Heterogeneous air-ground testbed in ROS 2 and Gazebo: a UAV provides overhead sensing while three UGVs execute tasks assigned by a Hungarian-algorithm allocator.",
     tags: [
@@ -171,7 +171,7 @@ const projects: WorkEntry[] = [
   */
   {
     slug: "engine-sensor-anomaly-detection",
-    title: "Engine Sensor Anomaly Detection",
+    title: "Engine Sensor Anomaly Detection (2025)",
     description:
       "An end-to-end machine learning pipeline for detecting anomalies in multivariate vehicle sensor data, using Isolation Forest and Airflow orchestration. It inspired EngineSense, which won second place at Honda's i-Con Hackathon (2026).",
     tags: [
@@ -224,7 +224,7 @@ const projects: WorkEntry[] = [
   },
   {
     slug: "multichannel-audio-source-extraction",
-    title: "Multichannel Audio Source Extraction",
+    title: "Multichannel Audio Source Extraction (2022)",
     description:
       "Course mini-project (ELG5377 - Adaptive Signal Processing, uOttawa, 2022): separating two overlapping speech sources from a two-microphone mixture using optimum Wiener filters built from empirical correlations.",
     tags: [

@@ -59,10 +59,10 @@ function AboutMe() {
       >
         All Nations University
       </a>{" "}
-      in Ghana, graduating with First Class Honors. Broadly, I'm interested in
+      , graduating with First Class Honors. 
+      Currently, I am interested in
       multi-robot systems coordination,
-      joint prediction and planning, and multi-agent reinforcement learning.
-      I currently work as a Software Test Engineer at Honda R&amp;D Americas.
+      path planning, and reinforcement learning. I want to build robust policies for multi-agent systems uder uncertainty in outdoor environments.
     </p>
   );
 }
